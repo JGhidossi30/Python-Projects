@@ -1,0 +1,14 @@
+Front-End
+The front-end of our project is located in the WebContent folder, which includes HTMl and CSS documents that show our raw "KSearch" tool.
+KSearch is a search engine that is specifically designed in this limited context to display information based on Netflix solely.
+By searching for Netflix, a simple Web Application will appear in the body displaying a correlation graph between subscribers and revenue, created using Neo4j.
+By searching for more specific keywords, which is limited due to time constraints, other information can be displayed in the Web Application. Try "With a 10% in domestic, international, and total number of subscribers to Netflix, what is the revenue projection for Q2 2018?"
+
+Back-End
+We started by cleaning the data based on Netflix revenue and subscribers and then created a knowledge map based on the two using Neo4j.
+We stored the relevant data in Excel sheets, which were used by the Python correlation calculator to determine correlations between the variables.
+The resulting data was then stored in another excel sheet, converted into a CSV file.
+The cleaned financial data was also loaded into the predictive model.
+
+There were many constraints in this project including time and knowledge/learning issues. On day 1 we spent a great deal of time with a sponsor trying to undertand Neo4j, without much success.
+Because of our loss of time trying to figure out the software, we were not able to get as much don eon this project as we wished.

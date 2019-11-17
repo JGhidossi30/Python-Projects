@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>KSearch</title>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<div class="menu">
+			<div class="logo">
+				<a href="./index.html" onclick="refresh()"><img src="images/KScreen_Logo.png" alt="KScreen" width="150px"/></a>
+				<script>
+					function refresh()
+					{
+						window.sessionStorage.clear();
+					}
+				</script>
+			</div>
+			<form name="search-form" onsubmit="saveSearch()">
+				<input type="text" name="search" id="search" placeholder="What Knowledge are you searching for today?">
+				<input type="submit" value="Search" class="button">
+				<script>
+				function saveSearch()
+				{
+					window.sessionStorage.setItem("str", document.getElementById("search").value);
+				}
+				</script>
+			</form>
+		</div>
+		<div class="webapp" id="webapp" style="display: none;">
+			<a href="https://www.netflix.com"><img src="images/Netflix_Logo.jpg" id="netflix" width="200px" style="display: none;"/></a><br />
+			Search Query: <i id="question"></i>
+			<div id="correlation" style="display: none;">
+				Correlation between Netflix Subscribers and Revenue
+				<img src="images/Netflix Correlation Graph.png" id="result" width="90%"/>
+			</div>
+			<div id="projection" style="display: none;">
+				Projection
+				<img src="images/Projection.png" id="result" width="90%"/>
+			</div>	
+			<script>
+				document.getElementById("question").innerHTML = window.sessionStorage.getItem("str");
+				var split = window.sessionStorage.getItem("str").split(" ");
+				var counter = 0;
+				for (var i = 0; i < split.length; i++)
+				{
+					switch (split[i])
+					{
+					case "10%":
+					case "10%,":
+					case "10%.":
+						counter++;
+						break;
+					case "Domestic":
+					case "Domestic,":
+					case "Domestic.":
+					case "domestic":
+					case "domestic,":
+					case "domestic.":
+						counter++;
+						break;
+					case "International":
+					case "International,":
+					case "International.":
+					case "international":
+					case "international,":
+					case "international.":
+						counter++;
+						break;
+					case "Total":
+					case "Total number":
+					case "Subscribers":
+					case "total":
+					case "total number":
+					case "subscribers":
+						counter++;
+						break;
+					case "Revenue projection":
+					case "Projection":
+					case "revenue projection":
+					case "projection":
+						counter++;
+						break;
+					case "Netflix":
+					case "netflix":
+					case "Netflix,":
+					case "netflix,":
+					case "Netflix.":
+					case "netflix.":
+						counter++;
+						document.getElementById("webapp").style.display = "block";
+						document.getElementById("netflix").style.display = "block";
+						document.getElementById("correlation").style.display = "block";
+						document.getElementById("webapp").style.display = "block";
+						break;
+					}
+					if (counter >= 7)
+					{
+						document.getElementById("webapp").style.display = "block";
+						document.getElementById("projection").style.display = "block";
+					}
+				}
+				</script>
+		</div>
+	</body>
+</html>

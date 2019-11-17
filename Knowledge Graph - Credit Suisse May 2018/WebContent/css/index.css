@@ -1,0 +1,63 @@
+body, html {
+	height: 100%;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #AAAAAA;
+}
+
+.logo {
+	float: left;
+	padding: 10px;
+}
+
+form {
+	width: 70%;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	padding: 20px;
+}
+
+input[type=text] {
+	width: 50%;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+input[type=submit] {
+	background-color: white;
+	display: inline-block;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+.webapp {
+	margin-top: 80px;
+	padding: 2.5%;
+	width: 50%;
+	height: auto;
+	border: 1px solid black;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+#netflix {
+	padding-bottom: 20px;
+}
+
+#correlation {
+	padding-top: 20px;
+}
+
+#result {
+	padding-top: 20px;
+	padding-left: 5%;
+	padding-bottom: 20px;
+}
